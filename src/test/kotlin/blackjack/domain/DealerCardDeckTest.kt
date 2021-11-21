@@ -33,7 +33,7 @@ internal class DealerCardDeckTest {
     }
 
     @Test
-    fun `카드가 두 장 들어있는 CardDeck에 getNextCard() 메소드를 호출하면 두번째로 Deck에 들어간 카드를 얻을 수 있다`() {
+    fun `카드가 두 장 들어있는 CardDeck에 getNextCard() 메소드를 호출하면 Deck의 마지막 카드를 얻을 수 있다`() {
         val deckCardsBuilder = object : DeckCardsBuilder {
             override fun build(): Stack<Card> {
                 val cards = Stack<Card>()
