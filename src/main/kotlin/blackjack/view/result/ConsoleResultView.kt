@@ -16,7 +16,7 @@ class ConsoleResultView : ResultView {
     }
 
     override fun showPlayerCards(player: Player, shouldPrintNewLineCharacter: Boolean) {
-        print("%s카드: %s".format(player.name, player.cardsHandler.getCardsString()))
+        print("%s카드: %s".format(player.name, player.cardsHandler.getCardDisplayNames()))
 
         if (shouldPrintNewLineCharacter) {
             println()

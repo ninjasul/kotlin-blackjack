@@ -69,17 +69,17 @@ internal class PlayerCardsHandlerTest {
     }
 
     @Test
-    fun `CLUBS ACE 카드 한장을 추가한 후 getCardsString()를 호출하면 'A클로버' 를 리턴한다`() {
+    fun `CLUBS ACE 카드 한장을 추가한 후 getCardDisplayNames()를 호출하면 'A클로버' 를 리턴한다`() {
         val cardsHandler = PlayerCardsHandler(PlayerCards(), PlayerCardAdditionDecider())
         val firstCard = Card(CardSymbol.CLUBS, CardNumber.ACE)
         cardsHandler.addCard(firstCard)
 
         val firstCardString = firstCard.number.rank + firstCard.symbol.koreanName
-        assertThat(cardsHandler.getCardsString()).isEqualTo(firstCardString)
+        assertThat(cardsHandler.getCardDisplayNames()).isEqualTo(firstCardString)
     }
 
     @Test
-    fun `SPADE KING 카드 한장과 DIAMOND TEN 한장을 추가한 후 getCardsString()를 호출하면 'K스페이드, 10다이아몬드' 를 리턴한다`() {
+    fun `SPADE KING 카드 한장과 DIAMOND TEN 한장을 추가한 후 getCardDisplayNames()를 호출하면 'K스페이드, 10다이아몬드' 를 리턴한다`() {
         val cardsHandler = PlayerCardsHandler(PlayerCards(), PlayerCardAdditionDecider())
         val firstCard = Card(CardSymbol.SPADE, CardNumber.KING)
         val secondCard = Card(CardSymbol.DIAMOND, CardNumber.TEN)
@@ -90,6 +90,6 @@ internal class PlayerCardsHandlerTest {
         val firstCardString = firstCard.number.rank + firstCard.symbol.koreanName
         val secondCardString = secondCard.number.rank + secondCard.symbol.koreanName
 
-        assertThat(cardsHandler.getCardsString()).isEqualTo("$firstCardString, $secondCardString")
+        assertThat(cardsHandler.getCardDisplayNames()).isEqualTo("$firstCardString, $secondCardString")
     }
 }
