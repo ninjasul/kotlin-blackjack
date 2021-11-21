@@ -22,15 +22,11 @@ value class CardPoint(val point: Int) {
         }
 
         fun getPoint(rank: String): CardPoint {
-            if (CardNumber.isAce(rank)) {
-                return CardPoint[ACE_DEFAULT_POINT]
+            return when {
+                CardNumber.isAce(rank) -> CardPoint[ACE_DEFAULT_POINT]
+                CardNumber.isRoyalFamily(rank) -> CardPoint[ROYAL_FAMILY_POINT]
+                else -> CardPoint[rank.toInt()]
             }
-
-            if (CardNumber.isRoyalFamily(rank)) {
-                return CardPoint[ROYAL_FAMILY_POINT]
-            }
-
-            return CardPoint[rank.toInt()]
         }
     }
 }
