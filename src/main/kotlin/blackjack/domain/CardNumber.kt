@@ -27,5 +27,11 @@ enum class CardNumber(val rank: String) {
         fun isRoyalFamily(rank: String): Boolean {
             return (JACK.rank == rank || QUEEN.rank == rank || KING.rank == rank)
         }
+
+        fun toCards(symbol: CardSymbol): List<Card> {
+            return values()
+                .map { Card(symbol, it) }
+                .toList()
+        }
     }
 }
