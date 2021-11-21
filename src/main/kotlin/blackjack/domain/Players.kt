@@ -20,13 +20,12 @@ data class Players(val items: List<Player>) {
             return Players(buildPlayer(input.split(PLAYER_NAME_DELIMITER)))
         }
 
-        fun buildPlayer(names: List<String>) = names
+        fun buildPlayer(names: List<String>): List<Player> = names
             .map {
                 Player(
                     it.trim(),
                     PlayerCardsHandler(PlayerCards(), PlayerCardAdditionDecider())
                 )
             }
-            .toList()
     }
 }
