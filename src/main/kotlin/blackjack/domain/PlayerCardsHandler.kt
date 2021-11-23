@@ -11,7 +11,7 @@ class PlayerCardsHandler(
     }
 
     override fun canReceiveAdditionalCard(): Boolean {
-        return cardAdditionDecider.canReceiveAdditionalCard(cards.getSumOfCardsPoint())
+        return cardAdditionDecider.canReceiveAdditionalCard(cards.getSumOfCardScore())
     }
 
     override fun getCards(): ParticipantCards {
@@ -19,6 +19,6 @@ class PlayerCardsHandler(
     }
 
     override fun getCardDisplayNames(): String {
-        return cards.getCardDisplayNames()
+        return cards.getDisplayNames()
     }
 }

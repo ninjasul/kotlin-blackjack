@@ -7,82 +7,82 @@ import org.junit.jupiter.params.provider.ValueSource
 
 internal class ResultCalculatorTest {
     @Test
-    fun `CardNumber 로 ACE 한장, KING 한장을 가지고 있는 cards에 대해 getCardsResultPoint() 메소드를 호출하면 21을 리턴한다`() {
+    fun `Denomination 으로 ACE 한장, KING 한장을 가지고 있는 cards에 대해 getCardsResultPoint() 메소드를 호출하면 21을 리턴한다`() {
         val resultCalculator = ResultCalculator()
 
         val cards = PlayerCards()
-        cards.add(Card(CardSymbol.SPADE, CardNumber.ACE))
-        cards.add(Card(CardSymbol.HEART, CardNumber.KING))
+        cards.add(Card(Suit.SPADE, Denomination.ACE))
+        cards.add(Card(Suit.HEART, Denomination.KING))
 
         assertThat(resultCalculator.getCardsResultPoint(cards)).isEqualTo(21)
     }
 
     @Test
-    fun `CardNumber 로 JACK 한장, QUEEN 한장을 가지고 있는 cards에 대해 getCardsResultPoint() 메소드를 호출하면 20을 리턴한다`() {
+    fun `Denomination 으로 JACK 한장, QUEEN 한장을 가지고 있는 cards에 대해 getCardsResultPoint() 메소드를 호출하면 20을 리턴한다`() {
         val resultCalculator = ResultCalculator()
 
         val cards = PlayerCards()
-        cards.add(Card(CardSymbol.SPADE, CardNumber.JACK))
-        cards.add(Card(CardSymbol.HEART, CardNumber.QUEEN))
+        cards.add(Card(Suit.SPADE, Denomination.JACK))
+        cards.add(Card(Suit.HEART, Denomination.QUEEN))
 
         assertThat(resultCalculator.getCardsResultPoint(cards)).isEqualTo(20)
     }
 
     @Test
-    fun `CardNumber 로 JACK 한장, QUEEN 한장, ACE를 한장 가지고 있는 cards에 대해 getCardsResultPoint() 메소드를 호출하면 21을 리턴한다`() {
+    fun `Denomination 으로 JACK 한장, QUEEN 한장, ACE를 한장 가지고 있는 cards에 대해 getCardsResultPoint() 메소드를 호출하면 21을 리턴한다`() {
         val resultCalculator = ResultCalculator()
 
         val cards = PlayerCards()
-        cards.add(Card(CardSymbol.SPADE, CardNumber.JACK))
-        cards.add(Card(CardSymbol.HEART, CardNumber.QUEEN))
-        cards.add(Card(CardSymbol.DIAMOND, CardNumber.ACE))
+        cards.add(Card(Suit.SPADE, Denomination.JACK))
+        cards.add(Card(Suit.HEART, Denomination.QUEEN))
+        cards.add(Card(Suit.DIAMOND, Denomination.ACE))
 
         assertThat(resultCalculator.getCardsResultPoint(cards)).isEqualTo(21)
     }
 
     @Test
-    fun `CardNumber 로 ACE 한장, TWO 한장을 가지고 있는 cards에 대해 getCardsResultPoint() 메소드를 호출하면 13를 리턴한다`() {
+    fun `Denomination 으로 ACE 한장, TWO 한장을 가지고 있는 cards에 대해 getCardsResultPoint() 메소드를 호출하면 13를 리턴한다`() {
         val resultCalculator = ResultCalculator()
 
         val cards = PlayerCards()
-        cards.add(Card(CardSymbol.SPADE, CardNumber.ACE))
-        cards.add(Card(CardSymbol.HEART, CardNumber.TWO))
+        cards.add(Card(Suit.SPADE, Denomination.ACE))
+        cards.add(Card(Suit.HEART, Denomination.TWO))
 
         assertThat(resultCalculator.getCardsResultPoint(cards)).isEqualTo(13)
     }
 
     @Test
-    fun `CardNumber 로 ACE 두장을 가지고 있는 cards에 대해 getCardsResultPoint() 메소드를 호출하면 12를 리턴한다`() {
+    fun `Denomination 으로 ACE 두장을 가지고 있는 cards에 대해 getCardsResultPoint() 메소드를 호출하면 12를 리턴한다`() {
         val resultCalculator = ResultCalculator()
 
         val cards = PlayerCards()
-        cards.add(Card(CardSymbol.SPADE, CardNumber.ACE))
-        cards.add(Card(CardSymbol.HEART, CardNumber.ACE))
+        cards.add(Card(Suit.SPADE, Denomination.ACE))
+        cards.add(Card(Suit.HEART, Denomination.ACE))
 
         assertThat(resultCalculator.getCardsResultPoint(cards)).isEqualTo(12)
     }
 
     @Test
-    fun `CardNumber 로 ACE 세장을 가지고 있는 cards에 대해 getCardsResultPoint() 메소드를 호출하면 13를 리턴한다`() {
+    fun `Denomination 으로 ACE 세장을 가지고 있는 cards에 대해 getCardsResultPoint() 메소드를 호출하면 13를 리턴한다`() {
         val resultCalculator = ResultCalculator()
 
         val cards = PlayerCards()
-        cards.add(Card(CardSymbol.SPADE, CardNumber.ACE))
-        cards.add(Card(CardSymbol.HEART, CardNumber.ACE))
-        cards.add(Card(CardSymbol.DIAMOND, CardNumber.ACE))
+        cards.add(Card(Suit.SPADE, Denomination.ACE))
+        cards.add(Card(Suit.HEART, Denomination.ACE))
+        cards.add(Card(Suit.DIAMOND, Denomination.ACE))
 
         assertThat(resultCalculator.getCardsResultPoint(cards)).isEqualTo(13)
     }
 
     @Test
-    fun `CardNumber 로 ACE 네장을 가지고 있는 cards에 대해 getCardsResultPoint() 메소드를 호출하면 14를 리턴한다`() {
+    fun `Denomination 으로 ACE 네장을 가지고 있는 cards에 대해 getCardsResultPoint() 메소드를 호출하면 14를 리턴한다`() {
         val resultCalculator = ResultCalculator()
 
         val cards = PlayerCards()
-        cards.add(Card(CardSymbol.SPADE, CardNumber.ACE))
-        cards.add(Card(CardSymbol.HEART, CardNumber.ACE))
-        cards.add(Card(CardSymbol.DIAMOND, CardNumber.ACE))
-        cards.add(Card(CardSymbol.CLUBS, CardNumber.ACE))
+        cards.add(Card(Suit.SPADE, Denomination.ACE))
+        cards.add(Card(Suit.HEART, Denomination.ACE))
+        cards.add(Card(Suit.DIAMOND, Denomination.ACE))
+        cards.add(Card(Suit.CLUBS, Denomination.ACE))
 
         assertThat(resultCalculator.getCardsResultPoint(cards)).isEqualTo(14)
     }

@@ -1,11 +1,11 @@
 package blackjack.service
 
 import blackjack.domain.Card
-import blackjack.domain.CardSymbol
+import blackjack.domain.Suit
 
 class ShuffledDeckCardsBuilder : CardDeckBuilder {
     override fun build(): List<Card> {
-        return CardSymbol.toCardPool()
+        return Suit.toCardPool()
             .values
             .flatten()
             .shuffled()

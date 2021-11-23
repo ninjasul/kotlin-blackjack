@@ -3,7 +3,7 @@ package blackjack.domain
 /**
  * 카드 무늬
  */
-enum class CardSymbol(val koreanName: String) {
+enum class Suit(val koreanName: String) {
     SPADE("스페이드"),
     HEART("하트"),
     DIAMOND("다이아몬드"),
@@ -11,9 +11,9 @@ enum class CardSymbol(val koreanName: String) {
     ;
 
     companion object {
-        fun toCardPool(): Map<CardSymbol, List<Card>> {
+        fun toCardPool(): Map<Suit, List<Card>> {
             return values()
-                .associateWith { CardNumber.toCards(it) }
+                .associateWith { Denomination.toCards(it) }
         }
     }
 }

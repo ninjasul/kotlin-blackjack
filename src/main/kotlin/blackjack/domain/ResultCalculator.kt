@@ -1,10 +1,10 @@
 package blackjack.domain
 
-import blackjack.domain.CardPoint.Companion.MAXIMUM_SUM_OF_CARD_POINTS
+import blackjack.domain.Denomination.Companion.MAXIMUM_SUM_OF_CARD_POINTS
 
 class ResultCalculator {
     fun getCardsResultPoint(playerCards: ParticipantCards): Int {
-        val defaultCardsResultPoint = playerCards.getSumOfCardsPoint()
+        val defaultCardsResultPoint = playerCards.getSumOfCardScore()
         val cardsResultPointWithAce = defaultCardsResultPoint + ACE_EXTRA_POINT
 
         if (playerCards.hasAceCard() && !isBustedCardsResultPoint(cardsResultPointWithAce)) {

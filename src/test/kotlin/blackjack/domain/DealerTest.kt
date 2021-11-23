@@ -18,10 +18,10 @@ internal class DealerTest {
         val cardDeckBuilder = object : CardDeckBuilder {
             override fun build(): List<Card> {
                 return listOf(
-                    Card(CardSymbol.SPADE, CardNumber.ACE),
-                    Card(CardSymbol.HEART, CardNumber.KING),
-                    Card(CardSymbol.DIAMOND, CardNumber.JACK),
-                    Card(CardSymbol.CLUBS, CardNumber.QUEEN)
+                    Card(Suit.SPADE, Denomination.ACE),
+                    Card(Suit.HEART, Denomination.KING),
+                    Card(Suit.DIAMOND, Denomination.JACK),
+                    Card(Suit.CLUBS, Denomination.QUEEN)
                 )
             }
         }
@@ -43,9 +43,9 @@ internal class DealerTest {
         val cardDeckBuilder = object : CardDeckBuilder {
             override fun build(): List<Card> {
                 return listOf(
-                    Card(CardSymbol.HEART, CardNumber.KING),
-                    Card(CardSymbol.DIAMOND, CardNumber.JACK),
-                    Card(CardSymbol.CLUBS, CardNumber.QUEEN),
+                    Card(Suit.HEART, Denomination.KING),
+                    Card(Suit.DIAMOND, Denomination.JACK),
+                    Card(Suit.CLUBS, Denomination.QUEEN),
                 )
             }
         }
@@ -70,12 +70,12 @@ internal class DealerTest {
         val cardDeckBuilder = object : CardDeckBuilder {
             override fun build(): List<Card> {
                 return listOf(
-                    Card(CardSymbol.HEART, CardNumber.KING),
-                    Card(CardSymbol.DIAMOND, CardNumber.JACK),
-                    Card(CardSymbol.CLUBS, CardNumber.QUEEN),
-                    Card(CardSymbol.SPADE, CardNumber.ACE),
-                    Card(CardSymbol.DIAMOND, CardNumber.TWO),
-                    Card(CardSymbol.HEART, CardNumber.SEVEN)
+                    Card(Suit.HEART, Denomination.KING),
+                    Card(Suit.DIAMOND, Denomination.JACK),
+                    Card(Suit.CLUBS, Denomination.QUEEN),
+                    Card(Suit.SPADE, Denomination.ACE),
+                    Card(Suit.DIAMOND, Denomination.TWO),
+                    Card(Suit.HEART, Denomination.SEVEN)
                 )
             }
         }
